@@ -16,3 +16,15 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #take built images and push to Docker hub
   - docker push calvinyap/cps847_a2
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "cps847-group20"
+  env: "Cps847a2-env"
+  bucket_name: "elasticbeanstalk-us-east-2-769403617610"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
