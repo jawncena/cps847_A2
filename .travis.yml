@@ -8,6 +8,11 @@ sudo: required
 services:
   - docker
 
-after_deploy:
-  - echo "done deploying"
+script:
+- docker image build -t calvinyap/cps847_a2 .
   
+after_success:
+  #log in to docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  #take built images and push to Docker hub
+  - docker push calvinyap/cps847_a2
