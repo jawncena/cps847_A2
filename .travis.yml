@@ -5,17 +5,23 @@ node_js:
 
 sudo: required
 
+before_install:
+  - npm install -g codecov
+
 services:
   - docker
 
 script:
-- docker image build -t calvinyap/cps847_a2 .
-  
+  - docker image build -t calvinyap/cps847_a2 .
+  #add coverage plan
+  - codecov
 after_success:
   #log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #take built images and push to Docker hub
   - docker push calvinyap/cps847_a2
+  -bash <(curl -s https://codecov.io/bash)
+
 
 
 deploy:
