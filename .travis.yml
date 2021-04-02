@@ -21,7 +21,7 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "cps847-group20"
+  app: "cps847_A2"
   env: "Cps847a2-env"
   bucket_name: "elasticbeanstalk-us-east-2-769403617610"
   on:
