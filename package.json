@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --ci --coverage && codecov"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,5 @@
   "devDependencies": {
     "codecov": "^3.8.1",
     "jest": "^26.6.3"
-  },
-  "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
   }
 }
