@@ -13,3 +13,8 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is live at http://localhost:${port}`)
 })
+
+function sum(a, b) {
+  return a + b;
+}
+module.exports = sum;
