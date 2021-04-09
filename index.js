@@ -4,14 +4,14 @@ const port = 3000
 const fs = require('fs')
 
 
-app.get('/', (req, res) => {
+app.get('/', async(req, res) => {
   res.sendFile(__dirname + '/index.html');
   //res.send('Server is online!')
  
 })
 
-app.listen(port, () => {
-  console.log(`Server is live at http://localhost:${port}`)
+app.listen(port,async () => {
+  //console.log(`Server is live at http://localhost:${port}`)
 })
 
 function sum(a, b) {
