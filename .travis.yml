@@ -14,7 +14,6 @@ services:
 script:
   - docker image build -t calvinyap/cps847_a2 .
   #add coverage plan
-  - npm test
   - codecov
 after_success:
   #log in to docker CLI
