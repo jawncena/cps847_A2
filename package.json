@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --ci --coverage && codecov"
+    "test": "jest --ci --detectOpenHandles --coverage && codecov",
+    "report-test":"jest && codecov"
   },
   "repository": {
     "type": "git",
