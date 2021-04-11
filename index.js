@@ -10,9 +10,9 @@ app.get('/', async(req, res) => {
  
 })
 
-/*app.listen(port,async () => {
+app.listen(port,async () => {
   //console.log(`Server is live at http://localhost:${port}`)
-})*/
+})
 
 function sum(a, b) {
   return a + b;
